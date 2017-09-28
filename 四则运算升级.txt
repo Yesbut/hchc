@@ -1,0 +1,79 @@
+#include <stdlib.h>
+#include<stdio.h>
+#include <iostream.h>
+#include <conio.h>
+#include <time.h>
+int main()
+{ 
+  int a = 0;
+  int b = 0;
+  int mode = 0;
+  int c=0;
+  int result = 0;
+  int score = 0;
+  int i = 0;
+  int n;
+  int x;
+  for(i=0;i<30;i++)
+  {
+     a = rand() % 100;
+     b = rand() % 100;  
+     mode = rand() % 4;      
+     printf("%d", a);   
+     switch(mode)        
+  {          
+         case 0:
+    printf("+ ");               
+             result= a + b;         
+          break;          
+         case 1:
+    printf("- ");               
+             result= a - b;               
+          break;
+   case 2:
+    printf("x ");               
+             result= a * b;              
+          break;          
+         case 3:               
+             printf("¡Â ");               
+             result= a / b;
+          break;          
+          default:              
+             printf("somethingis wrong!\n");               
+          break;         
+  }
+     printf("%d = ", b);
+     if(result==a/b&&a!=4&&b!=2)
+  {
+   scanf("%d/%d",&n,&x);
+      getchar();
+      if(n/x==a/b)
+   {
+    score+= 10;            
+             printf("Right\n\n");
+   }
+         else       
+   { 
+             printf("Wrong\n\n");
+             getchar();       
+   }
+  }
+    else
+ {
+  scanf("%d",&c);
+        getchar();
+        if(c==result)         
+  {
+   score+= 10;            
+            printf("Right\n\n"); 
+  }
+  else       
+  { 
+   printf("Wrong\n\n");
+            getchar();
+  }
+ }
+ }
+   printf("Yourscore is: %d\n\n\n", score);   
+   return 1;
+}
